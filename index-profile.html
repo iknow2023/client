@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iKnow</title>
+  <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/profile.css">
+</head>
+
+<body class="flex">
+
+  <!-- Профиль -->
+
+  <div class="profile__main">
+    <header class="header flex">
+      <div class="container header__container flex">
+        <a href="index.html" class="header__logo_link flex">
+          <img src="img/subjects/logo.png" class="header__logo_photo">
+        </a>
+      </div>
+    </header>
+  
+    <main class="main container flex">
+      <div class="main__my-photo flex">
+        <p class="main__photo_text">
+          Моё фото
+        </p>
+  
+        <div class="main__photo_change">
+          <img src="img/profile/0.png" class="main__photo" id="0">
+  
+          <div class="main__photo_background flex">
+            <img src="img/profile/camera.png" class="main__photo_btn">
+          </div>
+        </div>
+        
+      </div>
+  
+      <div class="main__my-info flex">
+        <p class="main__info_text">
+          Моя информация
+        </p>
+  
+        <form method="POST" class="main__form flex">
+          <div class="main__name flex">
+            <p class="main__name_text">
+              Имя:
+            </p>
+            
+            <input type="text" class="main__name_input">
+          </div>
+          
+          <div class="main__phone flex">
+            <p class="main__phone_text">
+              Телефон:
+            </p>
+            
+            <input type="tel" class="main__phone_input">
+          </div>
+  
+          <div class="main__password flex">
+            <p class="main__password_text">
+              Пароль:
+            </p>
+            
+            <input type="password" class="main__password_input">
+          </div>
+        </form>
+      </div>
+    </main>
+  
+    <footer class="footer flex">
+      <div class="container footer__container flex">
+        <button class="btn footer__delete_button">
+          Удалить профиль
+        </button>
+        
+        <a>
+          <button class="btn footer__save_button">
+            Сохранить
+          </button>
+        </a>
+      </div>
+    </footer>
+  
+    <img src="img/profile/lines_1.png" class="lines_1">
+  
+    <img src="img/profile/lines_2.png" class="lines_2">
+  
+    <img src="img/profile/spot.png" class="spot">
+  </div>
+
+  
+  <!-- Выбор фото -->
+
+  <div class="profile__choice">
+    <div class="photo__choice flex">
+      <div class="container photo__coice_container flex">
+        <p class="photo__choice_text">
+          Выбери фото...
+        </p>
+  
+        <main class="photo__choice_main flex">
+          <div class="photo__choice_line flex">
+            <img src="img/profile/0.png" class="photo__choice_photo-main" id="profile_photo_0">
+            <img src="img/profile/1.png" class="photo__choice_photo" id="profile_photo_1">
+            <img src="img/profile/2.png" class="photo__choice_photo" id="profile_photo_2">
+            <img src="img/profile/3.png" class="photo__choice_photo" id="profile_photo_3">
+            <img src="img/profile/4.png" class="photo__choice_photo" id="profile_photo_4">
+            <img src="img/profile/5.png" class="photo__choice_photo" id="profile_photo_5">
+          </div>
+  
+          <div class="photo__choice_line flex">
+            <img src="img/profile/6.png" class="photo__choice_photo" id="profile_photo_6">
+            <img src="img/profile/7.png" class="photo__choice_photo" id="profile_photo_7">
+            <img src="img/profile/8.png" class="photo__choice_photo" id="profile_photo_8">
+            <img src="img/profile/9.png" class="photo__choice_photo" id="profile_photo_9">
+            <img src="img/profile/10.png" class="photo__choice_photo" id="profile_photo_10">
+            <img src="img/profile/11.png" class="photo__choice_photo" id="profile_photo_11">
+          </div>
+          
+          <div class="photo__choice_line flex">
+            <img src="img/profile/12.png" class="photo__choice_photo" id="profile_photo_12">
+            <img src="img/profile/13.png" class="photo__choice_photo" id="profile_photo_13">
+            <img src="img/profile/14.png" class="photo__choice_photo" id="profile_photo_14">
+            <img src="img/profile/15.png" class="photo__choice_photo" id="profile_photo_15">
+            <img src="img/profile/16.png" class="photo__choice_photo" id="profile_photo_16">
+            <img src="img/profile/17.png" class="photo__choice_photo" id="profile_photo_17">
+          </div>
+          
+          <div class="photo__choice_line flex">
+            <img src="img/profile/18.png" class="photo__choice_photo" id="profile_photo_18">
+            <img src="img/profile/19.png" class="photo__choice_photo" id="profile_photo_19">
+            <img src="img/profile/20.png" class="photo__choice_photo" id="profile_photo_20">
+            <img src="img/profile/21.png" class="photo__choice_photo" id="profile_photo_21">
+            <img src="img/profile/22.png" class="photo__choice_photo" id="profile_photo_22">
+          </div>
+        </main>
+  
+        <button class="btn save_button">
+          Выбрать
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/profile.js"></script>
+</body>
+
+</html>

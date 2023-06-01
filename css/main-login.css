@@ -1,0 +1,313 @@
+/* common */
+
+:root{
+  --koef: calc(1519/3072);
+  --main-color: #FDF9EE;
+  --main-green: #B8EA7B;
+}
+
+.flex {
+  display: flex;
+}
+
+.btn {
+  font-family: "Montserrat Alternates", sans-serif;
+  border: none;
+  border-radius: calc(10px * var(--koef));
+  cursor: pointer;
+}
+
+.btn:hover {
+	transform: scale(110%);
+	box-shadow: 0 0 15px black;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:not(:hover) {
+	transform: scale(100%);
+	box-shadow: none;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn:active {
+	transform: scale(100%);
+	box-shadow: none;
+	transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.no_pointer_events {
+  pointer-events: none;
+}
+
+.modal__window {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+@keyframes modal_window_vanishing {
+  0% {opacity: 100%;}
+  100% {opacity: 0%;}
+}
+
+@keyframes modal_window_appearance {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+.modal__background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  z-index: 2;
+  display: none;
+}
+
+@keyframes modal_background_vanishing {
+  0% {opacity: 60%;}
+  100% {opacity: 0%;}
+}
+
+@keyframes modal_background_appearance {
+  0% {opacity: 0%;}
+  100% {opacity: 60%;}
+}
+
+.modal__window_background {
+  background-color: var(--main-green);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 870px;
+  height: 450px;
+  border: 5px solid black;
+  border-radius: 20px;
+  position: fixed;
+  z-index: 4;
+}
+
+
+/* login */
+
+.modal__login {
+  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 870px;
+  height: 450px;
+  border-radius: 20px;
+  position: fixed;
+  overflow: hidden;
+  z-index: 5;
+}
+
+@keyframes modal_login_vanishing {
+  0% {opacity: 100%;}
+  100% {opacity: 0%;}
+}
+
+@keyframes modal_login_appearance {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+.modal__login_text-1 {
+  font-size: calc(50px * var(--koef));
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.modal__login_text-2,
+.modal__login_text-3 {
+  font-size: calc(40px * var(--koef));
+  margin-bottom: 15px;
+}
+
+.modal__login_text-4 {
+  font-size: calc(30px * var(--koef));
+}
+
+.modal__login_phone,
+.modal__login_password {
+  font-family: "Montserrat Alternates", sans-serif;
+  width: calc(435px * var(--koef));
+  height: calc(90px * var(--koef));
+  border: 3px solid black;
+  border-radius: calc(10px * var(--koef));
+  font-size: calc(40px * var(--koef));
+  padding: 0 15px;
+}
+
+.modal__login_phone {
+  margin-bottom: 30px;
+}
+
+.modal__login_password {
+  margin-bottom: 40px;
+}
+
+.modal__login_btn {
+  margin-bottom: 20px;
+  width: calc(200px * var(--koef));
+  height: calc(90px * var(--koef));
+  font-size: calc(40px * var(--koef));
+  font-weight: 500;
+  color: var(--main-color);
+  background-color: #000000;
+}
+
+.modal__login_link {
+  cursor: pointer;
+}
+
+
+/* registration */
+
+.modal__reg {
+  background-color: transparent;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 730px;
+  height: 480px;
+  border-radius: 20px;
+  position: fixed;
+  overflow: hidden;
+  display: none;
+  z-index: 5;
+}
+
+@keyframes modal_reg_vanishing {
+  0% {opacity: 100%;}
+  100% {opacity: 0%;}
+}
+
+@keyframes modal_reg_appearance {
+  0% {opacity: 0%;}
+  100% {opacity: 100%;}
+}
+
+.modal__reg_text-1 {
+  font-size: calc(50px * var(--koef));
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.modal__reg_text-2,
+.modal__reg_text-3,
+.modal__reg_text-4,
+.modal__reg_text-5 {
+  font-size: calc(40px * var(--koef));
+  margin-bottom: 15px;
+}
+
+.modal__reg_text-6 {
+  font-size: calc(30px * var(--koef));
+}
+
+.modal__reg_form {
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.modal__reg_column-1,
+.modal__reg_column-2 {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__reg_phone,
+.modal__reg_name,
+.modal__reg_password-1,
+.modal__reg_password-2 {
+  font-family: "Montserrat Alternates", sans-serif;
+  width: calc(435px * var(--koef));
+  height: calc(90px * var(--koef));
+  border: 3px solid black;
+  border-radius: calc(10px * var(--koef));
+  font-size: calc(40px * var(--koef));
+  padding: 0 15px;
+}
+
+.modal__reg_phone,
+.modal__reg_password-1 {
+  margin-bottom: 30px;
+}
+
+.modal__reg_name,
+.modal__reg_password-2 {
+  margin-bottom: 40px;
+}
+
+.modal__reg_btn {
+  margin-bottom: 20px;
+  width: calc(535px * var(--koef));
+  height: calc(90px * var(--koef));
+  font-size: calc(40px * var(--koef));
+  font-weight: 500;
+  color: var(--main-color);
+  background-color: #000000;
+}
+
+.modal__reg_link {
+  cursor: pointer;
+}
+
+
+/* other */
+
+.modal__login_lines {
+  position: absolute;
+  top: 110px;
+  left: -10px;
+  width: 150px;
+}
+
+.modal__login_logo {
+  position: absolute;
+  width: 200px;
+  top: 140px;
+  right: -20px;
+  animation: login_logo_rotate 10s normal linear infinite;
+}
+
+@keyframes login_logo_rotate {
+  0% {transform: rotate(0deg);}
+  50% {transform: rotate(-180deg);}
+  100% {transform: rotate(-360deg);}
+}
+
+.modal__reg_lines {
+  position: absolute;
+  bottom: -130px;
+  right: -60px;
+  width: 180px;
+}
+
+.modal__exit_btn {
+  position: fixed;
+  height: 40px;
+  width: 40px;
+  background-color: var(--main-green);
+  border: 5px solid black;
+  border-radius: 10px;
+  right: 250px;
+  top: 144px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal__exit_photo {
+  width: 27px;
+  height: 27px;
+}

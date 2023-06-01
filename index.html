@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iKnow</title>
+	<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/main-login.css">
+</head>
+
+<body class="flex"> 
+	<div class="modal__window flex">
+		<div class="modal__window_background"></div>
+
+		<div class="modal__login flex">
+			<p class="modal__login_text-1">
+				Привет! Скорее входи в аккаунт и продолжай заниматься!
+			</p>
+
+			<p class="modal__login_text-2">
+				Номер телефона:
+			</p>
+
+			<input type="tel" class="modal__login_phone" placeholder="Обязательное поле">
+
+			<p class="modal__login_text-3">
+				Пароль:
+			</p>
+
+			<input type="password" class="modal__login_password" placeholder="Обязательное поле">
+
+			<button class="btn modal__login_btn">
+				Войти
+			</button>
+
+			<p class="modal__login_text-4">
+				Ещё не с нами? Нажми <u class="modal__login_link">сюда</u>, чтобы зарегистрироваться.
+			</p>
+
+			<img src="img/main/login_lines.png" class="modal__login_lines no_pointer_events">
+
+			<img src="img/main/logo.png" class="modal__login_logo no_pointer_events">
+		</div>
+		
+		<div class="modal__reg">
+			<p class="modal__reg_text-1">
+				Добро пожаловать! Вводи свои данные и можешь<br> приступать к обучению!
+			</p>
+
+			<div class="modal__reg_form flex">
+				<div class="modal__reg_column-1 flex">
+					<p class="modal__reg_text-2">
+						Номер телефона:
+					</p>
+		
+					<input type="tel" class="modal__reg_phone" placeholder="Обязательное поле">
+		
+					<p class="modal__reg_text-3">
+						Имя:
+					</p>
+		
+					<input type="tel" class="modal__reg_name">
+				</div>
+
+				<div class="modal__reg_column-2 flex">
+					<p class="modal__reg_text-4">
+						Пароль:
+					</p>
+		
+					<input type="password" class="modal__reg_password-1" placeholder="Обязательное поле">
+		
+					<p class="modal__reg_text-5">
+						Подтверждение пароля:
+					</p>
+		
+					<input type="password" class="modal__reg_password-2" placeholder="Обязательное поле">
+				</div>
+			</div>
+
+			<button class="btn modal__reg_btn">
+				Зарегистрироваться
+			</button>
+
+			<p class="modal__reg_text-6">
+				Уже есть аккаунт? Тогда нажми <u class="modal__reg_link">сюда</u>, чтобы войти.
+			</p>
+
+			<img src="img/main/reg_lines.png" class="modal__reg_lines no_pointer_events">
+		</div>
+
+		<div class="btn modal__exit_btn flex">
+			<img src="img/main/exit_btn.png" class="modal__exit_photo no_pointer_events">
+		</div>
+	</div>
+
+	<div class="modal__background"></div>
+
+	<header class="header container flex">
+		<a href="index.html" class="header__logo_link flex">
+			<img src="img/main/logo.png" class="header__logo_photo">
+		</a>
+
+		<div class="header__nav_btn flex">
+			<nav class="header__nav">
+				<a class="header__link header__link-1">Что это такое?</a>
+
+				<a class="header__link header__link-2">Почему мы?</a>
+
+				<a class="header__link header__link-3">Кто мы?</a>
+			</nav>
+
+			<button class="btn header__btn">
+				Вход
+			</button>	
+
+			<!-- Profile button -->
+
+			<a class="header__profile flex">
+        <p class="header__profile_text">
+          Профиль
+        </p>
+        
+        <img src="img/profile/0.png" class="header__profile_icon">
+      </a>
+
+      <div class="edit__window flex">
+        <div class="edit__about flex">
+          <div class="edit__photo_place">
+            <img src="img/profile/0.png" class="edit__photo">
+          </div>
+
+          <div class="edit__name_container flex">
+            <p class="edit__name"></p>
+          </div>
+        </div>
+
+        <div class="edit__btn flex">
+          <div class="edit__edit flex">
+            <div class="edit__edit_text">
+              Изменить
+            </div>
+  
+            <img src="img/profile_edit/edit_icon.png" class="edit__edit_icon">
+          </div>
+  
+          <div class="edit__exit flex">
+            <div class="edit__exit_text">
+              Выйти
+            </div>
+  
+            <img src="img/profile_edit/exit_icon.png" class="edit__exit_icon">
+          </div>
+        </div>
+      </div>
+		</div>
+	</header>
+	
+	<section class="section__main">
+		<div class="main container flex">
+			<div class="main-text flex">
+				<span class="main-text__subtitle">
+					<img class="main1-img no_pointer_events" src="img/main/line.png" alt="Линия">
+
+					iKnow
+				</span>
+
+				<h1 class="main-text__title">
+					Всё непонятное - просто и интересно.
+				</h1>
+
+				<span class="main-text__stitle"> 
+					Обучающая платформа для детей дошкольного возраста.
+				</span>
+
+				<a>
+					<button class="btn main_button" id="button">
+						Заниматься
+					</button>
+				</a>
+			</div>
+
+			<img class="main-img no_pointer_events" src="img/main/boy.png" alt="Маленький человек">
+		</div>
+	</section>
+
+	<section class="whatitis container flex">
+		<div class="whatitis-img">
+			<img class="whatitis-img1 no_pointer_events" src="img/what/Bukvy.jpg" alt="буквы">
+		</div>
+
+		<div class="whatitis-img">
+			<img class="whatitis-img2 no_pointer_events" src="img/what/Tsifry.jpg" alt="цифры">
+		</div>
+
+		<div class="whatitis__text flex">
+			<span class="whatitis__title">
+				iKnow - позитивное<br>место для обучения.
+			</span>
+
+			<span class="whatitis__subtitle">
+				Эта развивающая платформа подойдёт<br>
+				для детей, которые хотят подготовиться <br>
+				к школе и получить базовые знания сразу по<br>
+				нескольким направлениям.
+			</span>
+
+			<span class="whatitis__subtitle1">
+				Читай объяснение, решай задачи и получай удовольствие.
+			</span>
+		</div>
+	</section>
+
+	<section class="whyus container flex">
+		<div class="whyus__offers flex">
+			<u class="whyus__subtitle_u">
+				Мы предлагаем
+			</u>
+
+			<span class="whyus__title whyus__title-1 flex">
+				<p class="whyus__dash">
+					-<br>
+				</p>
+				
+				<p>
+					Доступность<br>преподаваемого<br>материала
+				</p>
+			</span>
+
+			<span class="whyus__title flex">
+				<p class="whyus__dash">
+					-<br>
+				</p>
+
+				<p>
+					Разнообразие предметов
+				</p>
+			</span>
+		</div>
+
+		<div class="whyus__benefits flex">
+			<u class="whyus__subtitle_u">
+				Наши преимущества
+			</u>
+
+			<span class="whyus__title whyus__title-1 flex">
+				<p class="whyus__dash">
+					-<br>
+				</p>
+
+				<p>
+					Платформа<br>абсолютно бесплатна
+				</p>
+			</span>
+
+			<span class="whyus__title flex">
+				<p class="whyus__dash">
+					-<br>
+				</p>
+
+				<p>
+					Увлекательное обучение<br>в игровой форме
+				</p>
+			</span>
+		</div>
+	</section>
+
+	<section class="whoweare flex">
+		<div class="container">
+			<p class="whoweare__main-title">
+				Привет! Мы команда разработчиков платформы iKnow. <br>Рады познакомиться!
+			</p>
+			
+			<div class="whoweare__line-1 flex">
+				<div class="whoweare__im flex">
+					<div class="whoweare__circle">
+						<img class="whoweare__image-1 no_pointer_events" src="img/we/Ira.png" alt="Иррришка">
+					</div>
+					
+					<div class="whoweare__text flex">
+						<p class="whoweare__title">Ирина Плиско</p>
+						<p class="whoweare__subtitle">Web-дизайнер<br>Front-end разработчик</p>
+					</div>
+				</div>
+
+				<div class="whoweare__im flex">
+					<div class="whoweare__circle">
+						<img class="whoweare__image-2 no_pointer_events" src="img/we/Andrey.png" alt="Андрюха">
+					</div>
+					
+					<div class="whoweare__text flex">
+						<p class="whoweare__title">Андрей Казадаев</p>
+						<p class="whoweare__subtitle">Web-дизайнер<br>Front-end разработчик</p>
+					</div>
+				</div>
+
+				<div class="whoweare__im flex">
+					<div class="whoweare__circle">
+						<img class="whoweare__image-3 no_pointer_events" src="img/we/Ksyusha.png" alt="Ксю">
+					</div>
+					
+					<div class="whoweare__text flex">
+						<p class="whoweare__title">Ксения Семенюта</p>
+						<p class="whoweare__subtitle">Front-end разработчик</p>
+					</div>
+				</div>
+			</div>
+
+			<div class="whoweare__line-2 flex">
+				<div class="whoweare__im flex">
+					<div class="whoweare__circle">
+						<img class="whoweare__image-4 no_pointer_events" src="img/we/Ilya.png" alt="Илья-муромец">
+					</div>
+					
+					<div class="whoweare__text flex">
+						<p class="whoweare__title">Илья Мазур</p>
+						<p class="whoweare__subtitle">Архитектор базы данных</p>
+					</div>
+				</div>
+
+				<div class="whoweare__im flex">
+					<div class="whoweare__circle">
+						<img class="whoweare__image-5 no_pointer_events" src="img/we/Tolya.png" alt="Толян">
+					</div>
+					
+					<div class="whoweare__text flex">
+						<p class="whoweare__title">Анатолий Семёнов</p>
+						<p class="whoweare__subtitle">Back-end разработчик</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<footer class="footer container flex">
+    <a href="https://vk.com/just_a_me" class="footer__link" target="_blank">
+      <img src="img/subjects/vk.png" class="vk_icon">
+    </a>
+
+    <a href="https://t.me/just_person_a" class="footer__link" target="_blank">
+      <img src="img/subjects/tg.png" class="tg_icon">
+    </a>
+    
+    <a href="mailto:aak278@tpu.ru" class="footer__link" target="_blank">
+      <img src="img/subjects/email.png" class="email_icon">
+    </a>
+  </footer>
+	
+	<img class="figure-img no_pointer_events" src="img/why/figura.png">
+	<img class="line1-img no_pointer_events" src="img/line1.png">
+	<img class="line2-img no_pointer_events" src="img/line2.png">
+	<img class="spot1-img no_pointer_events" src="img/spott1.png">
+	<img class="spot2-img no_pointer_events" src="img/spott2.png">
+	<img class="spot3-img no_pointer_events" src="img/spott3.png">
+
+	<script src="js/main.js"></script>
+	<script src="js/main-login.js"></script>
+</body>
+
+</html>

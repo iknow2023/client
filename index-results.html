@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iKnow</title>
+  <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/results.css">
+</head>
+
+<body class="flex">
+  <header class="header flex">
+    <div class="container header__container flex">
+      <a href="index.html" class="header__logo_link flex">
+        <img src="img/subjects/logo.png" class="header__logo_photo">
+      </a>
+  
+      <a class="header__profile flex">
+        <p class="header__profile_text">
+          Профиль
+        </p>
+        
+        <img src="img/profile/0.png" class="header__profile_icon">
+      </a>
+
+      <div class="edit__window flex">
+        <div class="edit__about flex">
+          <div class="edit__photo_place">
+            <img src="img/profile/0.png" class="edit__photo">
+          </div>
+
+          <div class="edit__name_container flex">
+            <p class="edit__name"></p>
+          </div>
+        </div>
+
+        <div class="edit__btn flex">
+          <div class="edit__edit flex">
+            <div class="edit__edit_text">
+              Изменить
+            </div>
+  
+            <img src="img/profile_edit/edit_icon.png" class="edit__edit_icon">
+          </div>
+  
+          <div class="edit__exit flex">
+            <div class="edit__exit_text">
+              Выйти
+            </div>
+  
+            <img src="img/profile_edit/exit_icon.png" class="edit__exit_icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="main flex">
+    <div class="container main__container flex">
+      <div class="main__total flex">
+        <img src="img/task_results/scale.png" class="main__total_scale no_pointer_events">
+
+        <img src="img/task_results/arrow.png" class="main__total_arrow no_pointer_events">
+
+        <p class="main__total_text">
+          Выполнение 0%
+        </p>
+      </div>
+
+      <div class="main__marks flex">
+        <p class="main__marks_text-1">
+          <u>Оцени задание, если хочешь:</u>
+        </p>
+  
+        <div class="main__marks_marks flex">
+          <img src="img/results_marks/1.png" class="main__marks_mark">
+          <img src="img/results_marks/2.png" class="main__marks_mark">
+          <img src="img/results_marks/3.png" class="main__marks_mark">
+          <img src="img/results_marks/4.png" class="main__marks_mark">
+          <img src="img/results_marks/5.png" class="main__marks_mark">
+          <img src="img/results_marks/6.png" class="main__marks_mark">
+        </div>
+
+        <p class="main__marks_text-2">
+          Спасибо за оценку!
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer container flex">
+    <a href="index-subjects.html">
+      <button class="btn back_button">
+        Вернуться к темам
+      </button>
+    </a>
+
+    <button class="btn next_button">
+      Далее
+    </button>
+  </footer>
+  
+  <img src="img/task_results/spot.png" class="spot no_pointer_events">
+
+  <img src="img/task_results/figure.png" class="figure no_pointer_events">
+
+	<script src="js/results.js"></script>
+</body>
+
+</html>

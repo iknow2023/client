@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+  
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iKnow</title>
+  <link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/subjects.css">
+</head>
+
+<body class="flex">
+  <header class="header flex">
+    <div class="container header__container flex">
+      <a href="index.html" class="header__logo_link flex">
+        <img src="img/subjects/logo.png" class="header__logo_photo">
+      </a>
+  
+      <a class="header__profile flex">
+        <p class="header__profile_text">
+          Профиль
+        </p>
+        
+        <img src="img/profile/0.png" class="header__profile_icon">
+      </a>
+
+      <div class="edit__window flex">
+        <div class="edit__about flex">
+          <div class="edit__photo_place">
+            <img src="img/profile/0.png" class="edit__photo">
+          </div>
+
+          <div class="edit__name_container flex">
+            <p class="edit__name"></p>
+          </div>
+        </div>
+
+        <div class="edit__btn flex">
+          <div class="edit__edit flex">
+            <div class="edit__edit_text">
+              Изменить
+            </div>
+  
+            <img src="img/profile_edit/edit_icon.png" class="edit__edit_icon">
+          </div>
+  
+          <div class="edit__exit flex">
+            <div class="edit__exit_text">
+              Выйти
+            </div>
+  
+            <img src="img/profile_edit/exit_icon.png" class="edit__exit_icon">
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container flex">
+    
+    <!-- Превью -->
+
+    <div class="container main__prewiew flex">
+      <img src="img/subjects/boy.png" alt="Boy" class="main__prewiew_photo no_pointer_events">
+
+      <div class="main__prewiew_text flex">
+        <p class="main__prewiew_text-1">
+          Теперь пора<br>
+          выбрать, что мы<br>
+          будем изучать.
+        </p>
+
+        <p class="main__prewiew_text-2">
+          Ниже расположены разделы<br>
+          с предметами. Выбери один, чтобы<br>
+          начать.
+        </p>
+      </div>
+    </div>
+
+    <!-- Предметы -->
+
+    <div class="main__choice container flex">
+      <div class="main__choice_line-1 container flex">
+        <div class="main__choice_subjects main__choice_subject-1 flex">
+          <div class="circle flex" onmousedown="showThemes('russian')">
+            <img src="img/subjects/russian.png" alt="Russian" class="choice__russian_logo subject__logo">
+          </div>
+  
+          <p class="choice__russian_text">
+            Руский язык
+          </p>
+        </div>
+  
+        <div class="main__choice_subjects main__choice_subject-2 flex">
+          <div class="circle flex" onmousedown="showThemes('math')">
+            <img src="img/subjects/math.png" alt="Math" class="choice__math_logo subject__logo">
+          </div>
+  
+          <p class="choice__math_text">
+            Математика
+          </p>
+        </div>
+      </div>
+
+      <div class="main__choice_line-2 container flex">
+        <div class="main__choice_subjects main__choice_subject-3 flex">
+          <div class="circle flex" onmousedown="showThemes('world')">
+            <img src="img/subjects/world.png" alt="World" class="choice__world_logo subject__logo">
+          </div>
+  
+          <p class="choice__world_text">
+            Окружающий мир
+          </p>
+        </div>
+  
+        <div class="main__choice_subjects main__choice_subject-4 flex">
+          <div class="circle flex" onmousedown="showThemes('lsf')">
+            <img src="img/subjects/lsf.png" alt="LSF" class="choice__lsf_logo subject__logo">
+          </div>
+  
+          <p class="choice__lsf_text">
+            ОБЖ
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Темы -->
+
+    <div class="container main__themes flex">
+      <div class="main__themes_russian flex">
+        <img src="img/subjects/russian.png" class="themes__photo themes__russian no_pointer_events">
+
+        <div class="themes__text flex">
+          <p class="themes__text-1">
+            Русский язык
+          </p>
+
+          <p class="themes__text-2">
+            Изучи основные правила, научиcь составлять предложения.
+          </p>
+        </div>
+      </div>
+
+      <div class="main__themes_math flex">
+        <img src="img/subjects/math.png" class="themes__photo themes__math no_pointer_events">
+
+        <div class="themes__text flex">
+          <p class="themes__text-1">
+            Математика
+          </p>
+
+          <p class="themes__text-2">
+            Научись считать и думать логически.
+          </p>
+        </div>
+      </div>
+
+      <div class="main__themes_world flex">
+        <img src="img/subjects/world.png" class="themes__photo themes__world no_pointer_events">
+
+        <div class="themes__text flex">
+          <p class="themes__text-1">
+            Окружающий мир
+          </p>
+
+          <p class="themes__text-2">
+            Узнай больше о нашей планете.
+          </p>
+        </div>
+      </div>
+
+      <div class="main__themes_lsf flex">
+        <img src="img/subjects/lsf.png" class="themes__photo themes__lsf no_pointer_events">
+
+        <div class="themes__text flex">
+          <p class="themes__text-1">
+            ОБЖ
+          </p>
+
+          <p class="themes__text-2">
+            Ознакомься с правилами безопасности.
+          </p>
+        </div>
+      </div>
+
+      <ul id="themes_ul" class="themes__ul"></ul>
+    </div>
+  </main>
+
+  <footer class="footer container flex">
+    <a href="https://vk.com/just_a_me" class="footer__link" target="_blank">
+      <img src="img/subjects/vk.png" class="vk_icon">
+    </a>
+
+    <a href="https://t.me/just_person_a" class="footer__link" target="_blank">
+      <img src="img/subjects/tg.png" class="tg_icon">
+    </a>
+    
+    <a href="mailto:aak278@tpu.ru" class="footer__link" target="_blank">
+      <img src="img/subjects/email.png" class="email_icon">
+    </a>
+  </footer>
+
+  <div class="spot_1"></div>
+  
+  <img src="img/subjects/lines_1.png" alt="Lines" class="lines_1 no_pointer_events">
+  
+  <img src="img/subjects/figure.png" alt="Figure" class="figure no_pointer_events">
+  
+  <div class="spot__container">
+    <div class="spot_2"></div>
+
+    <div class="spot_3"></div>
+  </div>
+
+  <img src="img/subjects/lines_2.png" alt="Lines" class="lines_2 no_pointer_events">
+
+  <script src="js/subjects.js"></script>
+</body>
+
+</html>

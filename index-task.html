@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100;200;300;400;500;600;700&display=swap"
+		rel="stylesheet">
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>iKnow</title>
+	<link rel="shortcut icon" href="img/logo.ico" type="image/x-icon">
+	<link rel="stylesheet" href="css/task.css">
+</head>
+
+<body class="flex">
+	<!-- Задание -->
+
+	<div class="task">
+		<header class="header flex">
+			<div class="container header__container flex">
+				<a href="index.html" class="header__logo_link flex">
+					<img src="img/subjects/logo.png" class="header__logo_photo">
+				</a>
+		
+				<a class="header__profile flex">
+					<p class="header__profile_text">
+						Профиль
+					</p>
+					
+					<img src="img/profile/0.png" class="header__profile_icon">
+				</a>
+	
+				<div class="edit__window flex">
+					<div class="edit__about flex">
+						<div class="edit__photo_place">
+							<img src="img/profile/0.png" class="edit__photo">
+						</div>
+	
+						<div class="edit__name_container flex">
+							<p class="edit__name"></p>
+						</div>
+					</div>
+	
+					<div class="edit__btn flex">
+						<div class="edit__edit flex">
+							<div class="edit__edit_text">
+								Изменить
+							</div>
+		
+							<img src="img/profile_edit/edit_icon.png" class="edit__edit_icon">
+						</div>
+		
+						<div class="edit__exit flex">
+							<div class="edit__exit_text">
+								Выйти
+							</div>
+		
+							<img src="img/profile_edit/exit_icon.png" class="edit__exit_icon">
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main class="main flex">
+			<div class="container main__container flex">
+				<p class="main__task_text">
+
+				</p>
+				
+				<div class="main__task_task">
+
+				</div>
+			</div>
+		</main>
+
+		<footer class="footer flex">
+			<div class="container footer__container flex">
+				<button class="btn footer__theory_button">
+					Теория
+				</button>
+				
+				<a>
+					<button class="btn footer__ready_button">
+						Готово
+					</button>
+				</a>
+			</div>
+		</footer>
+
+		<img src="img/task_results/spot.png" class="spot no_pointer_events">
+
+		<img src="img/task_results/figure.png" class="figure no_pointer_events">
+	</div>
+
+	
+	<!-- Теория -->
+
+	<div class="theory">
+		<div class="theory__main_container flex">
+			<div class="container theory__container flex">
+				<p class="theory__theme">
+					Тема
+				</p>
+
+				<main>
+					<!-- Теория -->
+				</main>
+
+				<button class="btn theory__button">
+					Понятно
+				</button>
+
+				<img src="img/task_results/lines.png" class="lines no_pointer_events">
+			</div>
+		</div>
+	</div>
+
+	<script src="js/task.js"></script>
+</body>
+
+</html>
