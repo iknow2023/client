@@ -51,6 +51,7 @@ var check_answer = function(answer, theme_id, cur_id, ex_id, topic_id, cur_diff,
   cur_req.onload = function () {
     if (cur_req.status != 200) {
       console.log("Error");
+      background.style.display = "none";
     }
     else {
       let cheking = JSON.parse(cur_req.response);
@@ -71,8 +72,10 @@ var check_answer = function(answer, theme_id, cur_id, ex_id, topic_id, cur_diff,
           else {
             let cur_data_2 = JSON.parse(cur_req_2.response);
             let result = cur_data_2[theme_id]["subtopics"][ex_id - cur_diff]["progress"];
+            console.log(result);
 
             localStorage["result"] = result;
+            localStorage["subtheme_result"] = result;
 
             alert("Задание решено правильно!");
             background.style.display = "none";
@@ -1097,52 +1100,56 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
 
     let cur_inner_2;
       if(ex_id == 28 || ex_id == 32){
-        cur_inner_2 = 
-        `<div class="left_slf1">
-          <div class="slf_radio_btn">
-            <input id="radio-1" type="radio" name="radio">
-            <label for="radio-1">` + capitalize(cur_options[0]) + `</label>
+        cur_inner_2 = `
+          <div class="radio_container">
+            <div class="slf_radio_btn">
+              <input id="radio-1" type="radio" name="radio">
+              <label for="radio-1">` + capitalize(cur_options[0]) + `</label>
+            </div>
+
+            <div class="slf_radio_btn">
+              <input id="radio-2" type="radio" name="radio">
+              <label for="radio-2">` + capitalize(cur_options[1]) + `</label>
+            </div>
+          
+            <div class="slf_radio_btn">
+              <input id="radio-3" type="radio" name="radio">
+              <label for="radio-3">`+ capitalize(cur_options[2]) + `</label>
+            </div>
+
+            <div class="slf_radio_btn">
+              <input id="radio-4" type="radio" name="radio">
+              <label for="radio-4">`+ capitalize(cur_options[3]) + `</label>
+            </div>
           </div>
-          <div class="slf_radio_btn">
-            <input id="radio-2" type="radio" name="radio">
-            <label for="radio-2">` + capitalize(cur_options[1]) + `</label>
+          
+          <div class="main__task_img_slf">
+            <img src="img/task_task/lsf/` + folder_name + cur_pic + `.png" class="cur_main__task_img">
           </div>
-        </div>
-        <div class="right_slf1">
-          <div class="slf_radio_btn">
-            <input id="radio-3" type="radio" name="radio">
-            <label for="radio-3">`+ capitalize(cur_options[2]) + `</label>
-          </div>
-          <div class="slf_radio_btn">
-            <input id="radio-4" type="radio" name="radio">
-            <label for="radio-4">`+ capitalize(cur_options[3]) + `</label>
-          </div>
-        </div>
-        <div class="main__task_img_slf">
-          <img src="img/task_task/lsf/` + folder_name + cur_pic + `.png" class="cur_main__task_img">
-        </div>
         `;
+        
       } 
       else if (ex_id == 33 || ex_id == 34) {
-        cur_inner_2 = 
-        `<div class="left_slf1">
+        cur_inner_2 = `
+        <div class="radio_container">
           <div class="slf_radio_btn">
             <input id="radio-1" type="radio" name="radio">
             <label for="radio-1">` + capitalize(cur_options[0]) + `</label>
           </div>
+
           <div class="slf_radio_btn">
             <input id="radio-2" type="radio" name="radio">
             <label for="radio-2">` + capitalize(cur_options[1]) + `</label>
           </div>
-        </div>
-        <div class="right_slf1">
+
           <div class="slf_radio_btn">
             <input id="radio-3" type="radio" name="radio">
             <label for="radio-3">`+ capitalize(cur_options[2]) + `</label>
           </div>
         </div>
+
         <div class="main__task_img_slf">
-        <img src="img/task_task/lsf/` + folder_name + cur_pic + `.png" class="cur_main__task_img">
+          <img src="img/task_task/lsf/` + folder_name + cur_pic + `.png" class="cur_main__task_img">
         </div>
         `;
       } 
@@ -1151,6 +1158,21 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
       document.querySelector(".main__task_task").innerHTML = cur_inner_2;
 
       document.querySelector(".cur_main__task_img").classList.add("no_pointer_events");
+
+      if (ex_id == 32 || ex_id == 33 || ex_id == 34) {
+        document.querySelectorAll(".slf_radio_btn").forEach(elem => {
+          elem.style.padding = "0 35px 120px 0";
+        });
+
+        document.querySelector(".radio_container").style.display = "flex";
+        document.querySelector(".radio_container").style.flexDirection = "row";
+        document.querySelector(".radio_container").style.flexWrap = "wrap";
+        document.querySelector(".radio_container").style.justifyContent = "center";
+        document.querySelector(".radio_container").style.alignItems = "center";
+        document.querySelector(".radio_container").style.width = "70%";
+
+        document.querySelector(".main__task_task").style.height = "100%";
+      };
 
       document.querySelector(".footer__ready_button").addEventListener("click", function() {
         let cur_answer;
@@ -1166,8 +1188,9 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
 
         if (ex_id == 28){
           check_answer(cur_answer, 0, cur_data["exercise"]["id"], ex_id, 4, 28, reqHeader);
-        } else if(ex_id == 32 || ex_id == 33 || ex_id == 34) {
-          check_answer(cur_answer, 1, cur_data["exercise"]["id"], ex_id, 4, 32, reqHeader);
+        } else if (ex_id == 32 || ex_id == 33 || ex_id == 34) {
+          console.log(cur_data);
+          check_answer(cur_answer, 1, cur_data["exercise"]["id"], ex_id, 4, 31, reqHeader);
         }
       });
   } 
@@ -1279,6 +1302,7 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
     document.querySelector(".main__task_task").style.justifyContent = "center";
     document.querySelector(".main__task_task").style.alignItems = "center";
     document.querySelector(".main__task_task").style.height = "100%";
+    document.querySelector(".main__task_task").style.lineHeight = "0";
 
     document.querySelector(".main__container").style.padding = "0";
 
@@ -1291,6 +1315,7 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
     
     document.querySelectorAll(".slf_radio_btn").forEach(elem => {
       elem.style.marginRight = "40px";
+      elem.style.padding = "0";
     });
   
     document.querySelector(".footer__ready_button").addEventListener("click", function() {
@@ -1305,64 +1330,139 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
     });
   } 
   else if (ex_id == 35) { 
-      let cur_task = cur_data["exercise"]["question"];
-      let cur_pic = cur_data["exercise"]["options"];
-      cur_pic = cur_pic.split("; ");
-  
-      let cur_inner = cur_task;
-      let str = "";
-      str +=  `<div class="left_slf1">`; 
-      if(cur_data["exercise"]["id"] >= 208 && cur_data["exercise"]["id"] <= 210) {
-        for(let i = 1; i <= cur_pic.length; i++){
-          str +=  `<div class="slf_checkbox_btn">
-          <input id="custom-checkbox` + i + `" class="custom-checkbox" type="checkbox" value = "`+ i +`">
-          <label for="custom-checkbox` + i + `">` + i + `</label>
-          <img src="img/task_task/lsf/behavior/` + cur_pic[i-1] + `.png" style="width: 150px">
-          </div>`
-        }
-      } else if (cur_data["exercise"]["id"] == 211 || cur_data["exercise"]["id"] == 212) {
-        let max_i;
-        if (cur_data["exercise"]["id"] == 211){
-          max_i = 10;
-        } else if (cur_data["exercise"]["id"] == 212){
-          max_i = 6;
-        }
-        for(let i = 1; i <= max_i; i++){
-          str +=  `<div class="slf_checkbox_btn">
-          <input id="custom-checkbox` + i + `" class="custom-checkbox" type="checkbox" value = "`+ i +`">
-          <label for="custom-checkbox` + i + `">` + i + `</label>
-          <img src="img/task_task/lsf/behavior/` + cur_pic[0] + `.png" style="width: 150px">
-          </div>`
-        }
-      }
-      str += `</div>`; 
-        let cur_inner_2 = str;
-       
-       //let cur_inner_3 = "Непроверяемые гласные в корне слова.";
-       /* let cur_inner_4 = 
-        ` <div>
-          <p class = "theory__theme">
-          Непроверяемые гласные в корне слова нельзя проверить.
-          Написание таких слов нужно просто запомнить.
-          Правильную форму всегда можно найти в словаре.
-          </p>
+    let cur_task = cur_data["exercise"]["question"];
+    let cur_pics = cur_data["exercise"]["options"].split("; ");
+
+    let cur_inner = "";
+
+    if (cur_pics.length == 4) {
+      for (let pic of cur_pics) {
+        let cur_pic = parseInt(pic);
+        cur_inner += `
+          <div class="slf_checkbox_btn flex">
+            <input id="custom-checkbox` + (cur_pic % 4 + 1) + `" class="custom-checkbox" type="checkbox">
+            <label for="custom-checkbox` + (cur_pic % 4 + 1) + `">` + (cur_pic % 4 + 1) + `</label>
+
+            <img src="img/task_task/lsf/behavior/` + cur_pic + `.png" class="no_pointer_events">
           </div>
-        `;*/
-        document.querySelector(".main__task_text").innerHTML = cur_inner;
-        document.querySelector(".main__task_task").innerHTML = cur_inner_2;
-        //document.querySelector(".theory__theme").innerHTML = cur_inner_3;
-       //document.querySelector(".theory__container main").innerHTML = cur_inner_4;
-       document.querySelector(".footer__ready_button").addEventListener("click", function() {
-        let cur_answer = "";
-        for(let i = 1; i <= cur_pic.length; i++){
-          if(document.getElementById("custom-checkbox" + i).checked){
-            cur_answer += document.getElementById("custom-checkbox" + i).value + "; ";
-          };
+        `;
+      };
+    }
+    else {
+      cur_inner+= `<div class="input_container">`;
+
+      for (let cur_num = 1; cur_num <= cur_pics[0].split(".")[1]; cur_num++) {
+        cur_inner += `
+          <div class="slf_checkbox_btn">
+            <input id="custom-checkbox` + cur_num + `" class="custom-checkbox" type="checkbox">
+            <label for="custom-checkbox` + cur_num + `">` + cur_num + `</label>
+          </div>
+        `;
+      }
+
+      cur_inner += `
+      </div>
+      <img src="img/task_task/lsf/behavior/` + cur_pics[0].split(".")[0] + `.png" class="no_pointer_events">
+      `;
+    };
+    
+    document.querySelector(".main__task_text").innerHTML = cur_task;
+    document.querySelector(".main__task_task").innerHTML = cur_inner;
+
+    if (cur_pics.length == 4) {
+      document.querySelectorAll(".slf_checkbox_btn img").forEach(elem =>{
+        elem.style.width = "200px";
+        elem.style.marginRight = "20px";
+        elem.style.boxShadow = "0 0 15px black";
+      });
+
+      document.querySelectorAll(".slf_checkbox_btn label").forEach(elem =>{
+        elem.style.width = "80px";
+        elem.style.lineHeight = "40px";
+        elem.style.height = "80px";
+        elem.style.marginRight = "20px";
+      });
+
+      document.querySelectorAll(".slf_checkbox_btn input").forEach(elem =>{
+        elem.style.position = "relative";
+        elem.style.display = "none";
+      });
+
+      document.querySelectorAll(".slf_checkbox_btn").forEach(elem =>{
+        elem.style.padding = "50px 0 0";
+        elem.style.margin = "0";
+        elem.style.width = "auto";
+        elem.style.height = "100%";
+        elem.style.justifyContent = "center";
+        elem.style.alignItems = "center";
+      });
+
+      document.querySelectorAll(".slf_checkbox_btn:nth-child(2n+1) label, .slf_checkbox_btn:nth-child(2n+1) img").forEach(elem =>{
+        elem.style.alignSelf = "start";
+      });
+      document.querySelectorAll(".slf_checkbox_btn:nth-child(2n) label, .slf_checkbox_btn:nth-child(2n) img").forEach(elem =>{
+        elem.style.alignSelf = "end";
+      });
+
+      document.querySelectorAll(".slf_checkbox_btn:nth-child(2n+1) label").forEach(elem =>{
+        elem.style.marginTop = "26px";
+      });
+      document.querySelectorAll(".slf_checkbox_btn:nth-child(2n) label").forEach(elem =>{
+        elem.style.marginBottom = "26px";
+      });
+
+      document.querySelector(".main__task_task").style.display = "flex";
+      document.querySelector(".main__task_task").style.flexWrap = "wrap";
+      document.querySelector(".main__task_task").style.justifyContent = "center";
+      document.querySelector(".main__task_task").style.alignItems = "center";
+      document.querySelector(".main__task_task").style.width = "100%";
+      document.querySelector(".main__task_task").style.height = "100%";
+      document.querySelector(".main__task_task").style.lineHeight = "0";
+    }
+    else {
+      document.querySelector(".main__task_task").style.display = "flex";
+      document.querySelector(".main__task_task").style.justifyContent = "center";
+      document.querySelector(".main__task_task").style.alignItems = "center";
+      document.querySelector(".main__task_task").style.height = "100%";
+      document.querySelector(".main__task_task").style.marginTop = "40px";
+
+      document.querySelector(".main__task_task img").style.height = "310px";
+      document.querySelector(".main__task_task img").style.boxShadow = "0 0 15px black";
+
+      document.querySelector(".input_container").style.display = "flex";
+      document.querySelector(".input_container").style.justifyContent = "center";
+      document.querySelector(".input_container").style.alignItems = "center";
+      document.querySelector(".input_container").style.flexWrap = "wrap";
+      document.querySelector(".input_container").style.width = "60%";
+      document.querySelector(".input_container").style.paddingRight = "70px";
+
+      document.querySelectorAll(".slf_checkbox_btn label").forEach(elem => {
+        elem.style.width = "40px";
+        elem.style.height = "40px";
+        elem.style.display = "block";
+        elem.style.lineHeight = "40px";
+        elem.style.textAlign = "center";
+        elem.style.margin = "30px";
+      });
+
+      document.querySelectorAll(".slf_checkbox_btn").forEach(elem => {
+        elem.style.all = "unset";
+      });
+    };
+
+    document.querySelector(".footer__ready_button").addEventListener("click", function() {
+      let cur_answer = "";
+
+      document.querySelectorAll(".slf_checkbox_btn input").forEach(elem => {
+        if (elem.checked) {
+          cur_answer += elem.nextElementSibling.textContent + "; ";
         }
-        cur_answer = cur_answer.slice(0, cur_answer.length - 2);
-        check_answer(cur_answer, 1, cur_data["exercise"]["id"], ex_id, 4, 31, reqHeader);
-      })
-  }
+      });
+
+      cur_answer = cur_answer.slice(0, cur_answer.length - 2);
+      check_answer(cur_answer, 1, cur_data["exercise"]["id"], ex_id, 4, 31, reqHeader);
+    });
+  };
 };
 
 
@@ -1423,9 +1523,81 @@ req1.onload = function () {
     };
 
 
-    // Получение задач
-    
+    // Получение теории
+
     let ex_id = localStorage["subtheme_id"];
+
+    let req3 = new XMLHttpRequest();
+
+    req3.withCredentials = false;
+    req3.open("GET", "https://iknow2023.bsite.net/api/topics/get-theory/" + ex_id);
+
+    req3.setRequestHeader("Authorization", reqHeader);
+
+    req3.send();
+
+    req3.onload = function () {
+      if (req3.status != 200) {
+        console.log("Error");
+      }
+      else {
+        let cur_theory = JSON.parse(req3.response)["theory"].split(" (&&) ");
+        let cur_title = localStorage["subtheme"];
+
+        document.querySelector(".theory__theme").innerHTML = cur_title;
+        document.querySelector(".theory__theme").style.textDecoration = "underline 3px";
+        document.querySelector(".theory__theme").style.fontSize = "40px";
+        
+        if (cur_theory[0] == "") {
+          let theory_img = document.createElement("img");
+
+          theory_img.style.height = "100%";
+          theory_img.style.maxWidth = "1200px";
+          theory_img.src = "img/theory/" + cur_theory[1] + ".png";
+          
+          document.querySelector(".theory__main").appendChild(theory_img);
+
+          document.querySelector(".theory__main").style.padding = "30px 50px 200px";
+        }
+        else if(cur_theory[1] == "") {
+          let theory_text = cur_theory[0];
+
+          document.querySelector(".theory__main").innerHTML = theory_text;
+          
+          document.querySelector(".theory__main").style.fontSize = "40px";
+          document.querySelector(".theory__main").style.lineHeight = "70px";
+          document.querySelector(".theory__main").style.padding = "30px 50px 130px";
+        }
+        else {
+          let theory_img = document.createElement("img");
+          let theory_text = document.createElement("p");
+
+          theory_img.style.height = "100%";
+          theory_img.style.maxWidth = "50%";
+          theory_img.style.marginRight = "50px";
+          theory_img.src = "img/theory/" + cur_theory[1] + ".png";
+
+          theory_text.innerHTML = cur_theory[0];
+
+          document.querySelector(".theory__main").appendChild(theory_img);
+          document.querySelector(".theory__main").appendChild(theory_text);
+
+          document.querySelector(".theory__main").style.fontSize = "30px";
+          document.querySelector(".theory__main").style.lineHeight = "50px";
+          document.querySelector(".theory__main").style.padding = "30px 50px 200px";
+        };
+
+        document.querySelector(".theory__main").style.width = "100%";
+        document.querySelector(".theory__main").style.height = "100%";
+        document.querySelector(".theory__main").style.justifyContent = "space-evenly";
+        document.querySelector(".theory__main").style.alignItems = "center";
+        document.querySelector(".theory__main").style.textAlign = "center";
+        document.querySelector(".theory__main").style.fontWeight = "400";
+      };
+    };
+
+
+    // Получение задач
 
     let req2 = new XMLHttpRequest();
 
@@ -1456,7 +1628,7 @@ req1.onload = function () {
           lsf_func(ex_id, cur_data, reqHeader);
         }
         else {
-          alert("Произошла какая-то непредвиденная ошибка!\nПожалуйста, сообщите об этом разработчикам.")
+          alert("Произошла какая-то непредвиденная ошибка!\nПожалуйста, сообщите об этом разработчикам.");
         };
       };
     };
@@ -1516,6 +1688,15 @@ document.querySelector(".theory__button").addEventListener("click", function() {
   theory.style.animation = "theory_vanishing 1s forwards";
   task.style.animation = "task_appearance 1s forwards";
 });
+
+if (localStorage["subtheme_result"] != "0") {
+  var task = document.querySelector(".task");
+  var theory = document.querySelector(".theory");
+
+  theory.style.display = "none";
+  task.style.display = "unset";
+  task.style.opacity = "100%";
+};
 
 
 // Переход в профиль

@@ -81,7 +81,6 @@ function showThemes(subject_name){
             }
             else {
                 let cur_data = JSON.parse(req2.response);
-                console.log(cur_data);
 
                 document.querySelector(".themes__ul").style.display = "unset";
                 document.querySelector(".lines_2").style.display = "unset";
@@ -185,8 +184,13 @@ function showThemes(subject_name){
                 
                 document.querySelectorAll(".subtopic_btn").forEach(elem =>
                     elem.addEventListener("click", function() {
+                        let subtheme = elem.firstChild.textContent.split(":")[0];
                         let subtheme_id = elem.id.slice(3, elem.id.length);
+                        let subtheme_result = elem.lastChild.textContent.slice(0, elem.lastChild.textContent.length - 1);
+
+                        localStorage["subtheme"] = subtheme;
                         localStorage["subtheme_id"] = subtheme_id;
+                        localStorage["subtheme_result"] = subtheme_result;
 
                         if (elem.lastChild.innerHTML == "100%") {
                             elem.removeAttribute("href");
