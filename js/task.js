@@ -1152,14 +1152,26 @@ var lsf_func = function(ex_id, cur_data, reqHeader) {
           <img src="img/task_task/lsf/` + folder_name + cur_pic + `.png" class="cur_main__task_img">
         </div>
         `;
-      } 
+      };
      
       document.querySelector(".main__task_text").innerHTML = cur_inner;
       document.querySelector(".main__task_task").innerHTML = cur_inner_2;
 
       document.querySelector(".cur_main__task_img").classList.add("no_pointer_events");
 
-      if (ex_id == 32 || ex_id == 33 || ex_id == 34) {
+      if (ex_id == 28) {
+        document.querySelectorAll(".slf_radio_btn").forEach(elem => {
+          elem.style.padding = "0 35px 120px 0";
+        });
+
+        document.querySelector(".radio_container").style.display = "flex";
+        document.querySelector(".radio_container").style.flexDirection = "row";
+        document.querySelector(".radio_container").style.flexWrap = "wrap";
+        document.querySelector(".radio_container").style.justifyContent = "center";
+        document.querySelector(".radio_container").style.alignItems = "center";
+        document.querySelector(".radio_container").style.width = "50%";
+      }
+      else if (ex_id == 32 || ex_id == 33 || ex_id == 34) {
         document.querySelectorAll(".slf_radio_btn").forEach(elem => {
           elem.style.padding = "0 35px 120px 0";
         });

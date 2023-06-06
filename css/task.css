@@ -604,6 +604,7 @@ td {
   background-color: var(--main-green);
   border-radius: calc(40px * var(--koef));
   flex-direction: column;
+  overflow: hidden;
 }
 
 .theory__theme {
